@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>JavaScript test</title>
+    <script type="text/javascript">
+		function Client(id, firstName, lastName, orders) {
+			this.id = id;
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.orders = orders;
+			
+			this.calculateAverage = function() {
+				var sum = 0;
+				for (var i = 0; i < orders.length; i++) {
+					sum = sum + orders[i];
+				}
+				return sum / orders.length;
+			}
+			
+			this.displayDetails = function() {
+				document.write("Client #" + id + ":<br/>");
+				document.write("First name: " + firstName + ", Last name: " + lastName + "<br/>");
+				document.write("Average order sum: " + this.calculateAverage() + "<br/>");
+			}
+			
+			this.displayProperties = function() {
+				var details = "";
+				for (var x in this) {
+					details = x + ": " + this[x];
+					document.write(details + "<br/>");
+				}
+			}
+		}
+		
+		var client1 = new Client(1001, "Dyadya", "Vasia", new Array(100, 12, 123));
+		var client2 = new Client(1002, "Kostyan", "Baraban", new Array(78, 480, 15));
+		var client3 = new Client(1003, "Irishka", "Martishka", new Array(120, 200, 150));
+		
+		client1.displayProperties();
+		client1.displayDetails();
+		
+		client2.displayProperties();
+		client2.displayDetails();
+		
+		client3.displayProperties();
+		client3.displayDetails();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

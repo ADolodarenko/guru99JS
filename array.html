@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Arrays</title>
+    <script type="text/javascript">
+      Array.prototype.displayItems = function() {
+        for (i = 0; i < this.length; i++) {
+          document.write(this[i] + "<br/>");
+        }
+      }
+
+      var coworkers = new Array("Lopatin", "Tverdohleb", "Perepletchik");
+
+      document.write("Array:</br>");
+      coworkers.displayItems();
+      document.write("Array length: " + coworkers.length + "<br/>");
+
+      document.write("Sorted array:</br>");
+      coworkers.sort();
+      coworkers.displayItems();
+
+      document.write("Reversed array:</br>");
+      coworkers.reverse();
+      coworkers.displayItems();
+
+      document.write("Reversed array after removing:</br>");
+      coworkers.pop();
+      coworkers.displayItems();
+
+      document.write("Reversed array after pusing new element:</br>");
+      coworkers.push("A brand new genius man");
+      coworkers.displayItems();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

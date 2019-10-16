@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>DOM testing</title>
+  </head>
+  <body>
+    <h1>Click the "Date" button in order to show current date & time in GMT format.</h1>
+    <input type="button" id="btnDateNow" value="Date"/>
+    <script type="text/javascript">
+      function getCurrentDateInGMT() {
+        return new Date().toGMTString();
+      }
+
+      function showCurrentDate() {
+        alert(getCurrentDateInGMT());
+      }
+
+      document.getElementById("btnDateNow").addEventListener("click", showCurrentDate);
+    </script>
+  </body>
+</html>

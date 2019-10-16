@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>If statements</title>
+    <script type="text/javascript">
+      var greeting;
+      var hours = new Date().getHours();
+
+      if (hours < 12)
+        greeting = "Good morning!";
+      else
+        greeting = "Good afternoon!";
+
+      greeting = greeting + " Enter your age, please."
+
+      var age = prompt(greeting);
+      var response;
+
+      if (age < 18) {
+        response = "You fly back to school, little Starling. Fly, fly, fly...";
+        document.write(response);
+      }
+
+      if (age >= 18) {
+        response = "Welcome!";
+        response = response + " Enter first number.";
+        var first = prompt(response);
+
+        response = "Enter second number.";
+        var second = prompt(response);
+
+        if (first == second)
+          response = first + " is equal to " + second;
+        else if (first < second)
+          response = first + " is less than " + second;
+        else
+          response = first + " is greater than " + second;
+
+        document.write(response);
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

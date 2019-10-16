@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Event</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function trigger() {
+                var pElement = document.getElementById("hover");
+                
+                pElement.addEventListener("mouseover", popup);
+                pElement.addEventListener("mouseover", newP);
+                pElement.addEventListener("mouseover", goTo);
+                
+                function popup() {
+                    alert("Welcome to my webpage! " +
+                            isNaN("s") +
+                            " Your platform: " + navigator.platform +
+                            " Your OS version: " + navigator.appVersion);
+                }
+                
+                function newP() {
+                    var newPElement = document.createElement("p");
+                    var textNode = document.createTextNode("Some text here.");
+                
+                    newPElement.appendChild(textNode);
+                    pElement.appendChild(newPElement);                    
+                }
+                
+                function goTo() {
+                    location.href=prompt("Where would you want to go?");
+                }
+            }            
+        </script>
+        <style>
+            p {
+                font-size: 50px;
+                position: fixed;
+                left: 550px;
+                top: 300px;
+            }
+        </style>
+    </head>
+    <body onload="trigger()">
+        <p id="hover">Welcome!!!</p>
+    </body>
+</html>
